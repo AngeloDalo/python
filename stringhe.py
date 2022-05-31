@@ -31,7 +31,7 @@ print(x.replace("o", "w")) #sostituisce o con w
 y = " ho 20 anni"
 print(x + y)
 prova = "ciao io {} peso {}" #nelle parentesi posso mettere numeri che riprende le ()
-print(prova.format(y, 90)) #come il . o + in php o js
+print(prova.format(y, 90))
 
 prova = "ciao sono io e sono \"alto\"" #escape ""
 prova = 'ciao io sono \'io' #escape ''
