@@ -1,0 +1,16 @@
+list tuple set collection
+
+LISTE: sono collezioni ordinate e modificabili. Permettono duplicati
+TUPLE: sono collezioni ordinate ma immutabili. Permettono duplicati
+SET: sono collezioni non ordinate e perciò non indicizzate. Non permettono duplicati
+DICTIONARY: sono collezioni ordinate e modicicabili. Non permettono duplicati
+
+#list: x = ["roma", "Milano"]
+#tuple: x = ("roma", "Milano")
+#set: x = {"roma", "milano", "napoli"}
+#dict: x = {"nome": "Luca", "eta": 15}
+
+LISTE=> indici modificabile duplicati
+TUPLE=> indici NOmodificabile duplicati
+SET=> NOindici NOmodificabile NOduplicati
+DIC=> indici moficiabile NOduplicati
