@@ -1,5 +1,7 @@
 #pip install mysql-connector-python
 import mysql.connector
+from mysql.connector import cursor
+
 db = mysql.connector.connect(
     host = "localhost",
     user = "root",
@@ -43,3 +45,41 @@ cursor.execute(sql)
 result = cursor.fetchall() #fetchone solo una riga
 for riga in result:
     print(riga)
+#ORDER BY E LIMIT
+sql = "SELECT * FROM clienti ORDER BY nome DESC LIMIT 4"
+
+#DELATE
+cursor = db.cursor()
+sql = "DELATE FROM clienti WHERE nome = 'Luca'"
+cursor.execute(sql)
+#sql = "DELATE FROM clienti WHERE nome = %s"
+#valore = ("Paolo")
+#cursor.execute(sql, valore)
+db.commit()
+print("numero di righe cancellate: ", cursor.rowcount)
+
+#UPDATE
+cursor = db.cursor()
+sql = "UPDATE clienti SET nome = 'Io' WHERE nome = 'Luca'"
+cursor.execute(sql)
+#sql = "UPDATE clienti SET nome = 'Io' WHERE id = $s"
+#valori = ("Gigio", 6)
+#cursor.execute(sql, valori)
+db.commit()
+print("righe modificate ", cursor.rowcount())
+
+#JOIN
+cursor = db.cursor()
+sql = "SELECT \
+    nome, cognome \
+    FROM clienti \
+    INNER/LEFT/RIGHT JOIN citta ON clienti.citta = citta.id "
+cursor.execute(sql)
+result = cursor.fetchall()
+for riga in result:
+    print(riga)
+
+#DROP TABLE
+cursor = db.cursor()
+sql = "DROP TABLE IF EXISTS tabella"
+cursor.execute(sql)
