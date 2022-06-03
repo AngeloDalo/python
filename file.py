@@ -31,3 +31,5 @@ if os.path.exists():
     os.remove("prova.txt")
 else:
     print("non esiste file con questo nome")
+#RIMUOVERE DIRECTORY
+os.rmdir("prova") #se non esiste da errore, posso risolvere con try except
