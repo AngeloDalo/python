@@ -7,5 +7,5 @@ import camelcase
 c = camelcase.CamelCase()
 frase = "ciao sono io"
 print(c.hump(frase))
-#pip unistall camelcase
+#pip uninstall camelcase
 #pip list #vedere package installati
